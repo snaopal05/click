@@ -1,0 +1,18 @@
+#!binbash
+
+# Daftar koordinat klik (X, Y) - bisa kamu ubah
+coords=(
+  500 300  # Titik 1
+  550 350  # Titik 2
+  600 400  # Titik 3
+)
+
+# Jalankan loop tanpa batas
+while true; do
+  for coord in ${coords[@]}; do
+    x=$(echo $coord  cut -d' ' -f1)
+    y=$(echo $coord  cut -d' ' -f2)
+    xdotool mousemove $x $y click 1
+    sleep 0.5
+  done
+done
